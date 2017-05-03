@@ -67,7 +67,7 @@ func periodicFunc(tick time.Time){
 		fmt.Println(errs)
 	}
 	var err error
-	bot, err = linebot.New("e07874bf26b33e5397a0de0278557807", "yk6oBgGuxjuya/Ufrm53SSCotxktUAtA96rjRBlF3+G7muhj/iqAi8w+SeX8/IpaYlUQGIA1NdQ69xxuGrO/aKbmkZsaRAiETLwpSgCfkJ0NmiKuOSz67vHSOFNI+8EECWkvp1l7wvImemYa0SDwiwdB04t89/1O/w1cDnyilFU=")
+	bot, err = linebot.New(os.Getenv("ChannelSecret"), os.Getenv("ChannelAccessToken"))
 	log.Println("Bot:", bot, " err:", err)
 	for i:=0; i<len(indoor_json.Feeds); i++ {
 		val, err:=client.Get(indoor_json.Feeds[i].Device_id).Result()
