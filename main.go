@@ -84,7 +84,7 @@ func periodicFunc(tick time.Time){
 }
 
 func main() {
-	ticker := time.NewTicker(2 * time.Second)
+	ticker := time.NewTicker(30 * time.Minute)
 	go func(){
         for t := range ticker.C {
             //Call the periodic function here.
