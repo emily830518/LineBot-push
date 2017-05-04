@@ -84,13 +84,13 @@ func periodicFunc(tick time.Time){
 }
 
 func main() {
-	ticker := time.NewTicker(2 * time.Second)
+	ticker := time.NewTicker(5 * time.Second)
 	go func(){
         for t := range ticker.C {
             //Call the periodic function here.
             periodicFunc(t)
         }
     }()
-    quit := make(chan bool, 1)
-    <-quit
+    // quit := make(chan bool, 1)
+    // <-quit
 }	
